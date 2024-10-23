@@ -17,7 +17,7 @@ const Header = () => {
 
           <form onSubmit={handleSubmit(onSubmit)} className="join flex justify-center">
             <input
-              className="input input-bordered join-item w-2/5"
+              className="input input-bordered join-item w-2/5 bg-white"
               placeholder="Search"
               type="text"
               {...register("search")}

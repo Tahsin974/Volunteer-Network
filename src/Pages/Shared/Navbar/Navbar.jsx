@@ -17,6 +17,7 @@ const Navbar = () => {
 
     })
   }
+  
   return (
     <div className="navbar bg-transparent">
       <div className="navbar-start">
@@ -77,6 +78,7 @@ const Navbar = () => {
           <li>
             <Link>Blog</Link>
           </li>
+          
         </ul>
       </div>
 
@@ -86,13 +88,15 @@ const Navbar = () => {
           <h1>{user.displayName}</h1>
           <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full bg-slate-400">
-                <i className="fa-solid fa-user mt-3 "></i>
-            </div>
+            
+          
+          <div className="w-10 rounded-full bg-slate-400">
+              <i className="fa-solid fa-user mt-3 "></i>
+          </div>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            className="menu menu-sm dropdown-content bg-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <li>
               <a className="justify-between">
                 Profile

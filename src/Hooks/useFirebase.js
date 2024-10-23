@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Home/Login/Firebase/firebase.init";
 import { getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged } from "firebase/auth";
+import axios from "axios";
 
 initializeAuthentication();
 const useFirebase = () => {
@@ -24,13 +25,23 @@ const useFirebase = () => {
 
     useEffect(() =>{
         
-        const unSubscribed = onAuthStateChanged(auth, (user) => {
+        const unSubscribed = onAuthStateChanged(auth, (currentUser) => {
+
             setLoading(false);
-            if (user) {
-                
-              setUser(user);
-              
-              
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = {email:userEmail}
+            setUser(currentUser);
+            if (currentUser) {
+                axios.post('https://volunteer-network-server-rose-xi.vercel.app/jwt',loggedUser,{withCredentials: true})
+                .then(res =>{
+                    console.log(res.data)
+                })
+            }
+            else{
+                axios.post('https://volunteer-network-server-rose-xi.vercel.app/logout',loggedUser,{withCredentials: true})
+                .then(res =>{
+                    console.log(res.data)
+                })
             }
           });
           return () => unSubscribed;

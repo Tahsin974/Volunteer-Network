@@ -36,7 +36,7 @@ const VolunteerList = () => {
 
       <div className="card bg-white shadow-xl p-5 my-5">
         <div className="overflow-x-auto">
-          <table className="table table-xs table-sm table-md	table-lg">
+          <table className="table table-xs sm:table-sm md:table-md	lg:table-lg">
             {/* head */}
             <thead>
               <tr className="bg-slate-300 rounded-md ">
@@ -50,7 +50,7 @@ const VolunteerList = () => {
             <tbody>
               {/* row 1 */}
 
-              {volunteers.map((volunteer) => (
+              {volunteers.sort((a,b) => a.date.localeCompare(b.date)).map((volunteer) => (
                 <tr key={volunteer._id}>
                   <td>{volunteer.name}</td>
                   <td>{volunteer.email

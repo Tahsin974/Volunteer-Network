@@ -5,6 +5,7 @@ import logo3 from "../../../../logos/plus 1.png";
 const AdminNavbar = () => {
   return (
     <div className=" bg-white">
+      <div className="grid justify-items-center">
       <Link to="/home" className="btn btn-ghost text-xl">
         <figure className="max-w-36">
           <img src={logo1} className="image-full" alt="" />
@@ -17,6 +18,11 @@ const AdminNavbar = () => {
           <img src={logo2} alt="" className="w-3/4" />
           Volunteer register list</Link>
         </li>
+        <li>
+          <Link to='/admin/volunteerlist2'>
+          <img src={logo2} alt="" className="w-3/4" />
+          Volunteer register list 2</Link>
+        </li>
 
         <li>
           <Link to="/admin/addevent">
@@ -24,6 +30,7 @@ const AdminNavbar = () => {
           Add event</Link>
         </li>
       </ul>
+      </div>
     </div>
   );
 };

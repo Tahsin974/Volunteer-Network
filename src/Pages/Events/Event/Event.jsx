@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
 import { format } from "date-fns";
+import PropTypes from "prop-types";
+// import { format } from "date-fns";
 
 const Event = ({ event,handleCancel }) => {
   const {eventTitle, eventDate, imgURL } = event;
-  const date = format(new Date(eventDate), "d MMM , yyyy");
-
+  const date = format(eventDate, 'MMMM dd, yyyy');
+  console.log(date)
   
   
 

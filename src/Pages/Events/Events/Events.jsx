@@ -1,26 +1,25 @@
 import { useEffect, useState } from "react";
-
-import axios from "axios";
 import useAuthContext from "../../../Context/useAuthContext";
 import Event from "../Event/Event";
 import Navbar from "../../Shared/Navbar/Navbar";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const Events = () => {
     const [events,setEvents] = useState([]);
-    const {user} = useAuthContext()
+    const {user} = useAuthContext();
+    const axiosSecure = useAxiosSecure();
     const baseURL = "https://volunteer-network-server-rose-xi.vercel.app";
-
     useEffect(() => {
         
        if(user.email){
-        axios.get(`${baseURL}/events?email=${user.email}`)
+        axiosSecure.get(`/events?email=${user.email}`,{withCredentials:true})
         .then(res => {
          
             setEvents(res.data)})
        }
         
        
-    },[user])
+    },[user,axiosSecure])
 
     const handleCancel = (name) => {
         fetch(`${baseURL}/event?name=${name}` , {

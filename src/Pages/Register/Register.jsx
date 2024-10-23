@@ -60,17 +60,17 @@ const Register = () => {
               ref={nameRef}
               type="text"
               defaultValue={user.displayName || ""}
-              className="input input-bordered"
+              className="input input-bordered bg-white"
             />
           </div>
           <div className="form-control col-span-2">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text ">Email</span>
             </label>
             <input
               type="email"
               defaultValue={user.email || ""}
-              className="input input-bordered"
+              className="input input-bordered bg-white"
               ref={emailRef}
             />
           </div>
@@ -78,7 +78,7 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Date</span>
             </label>
-            <input type="date" className="input input-bordered" ref={dateRef} />
+            <input type="date" className="input input-bordered bg-white" ref={dateRef} />
           </div>
 
           <div className="form-control">
@@ -89,14 +89,14 @@ const Register = () => {
               ref={eventNameRef}
               type="text"
               defaultValue={activity.eventTitle || ""}
-              className="input input-bordered"
+              className="input input-bordered bg-white"
             />
           </div>
           <div className="form-control col-span-2">
             <label className="label">
               <span className="label-text">Description</span>
             </label>
-            <textarea className="textarea textarea-bordered" ref={descriptionRef} />
+            <textarea className="textarea textarea-bordered bg-white" ref={descriptionRef} />
           </div>
           <div className="form-control mt-6 col-span-2">
             <button className="btn bg-blue-500 hover:bg-blue-600 text-white">
